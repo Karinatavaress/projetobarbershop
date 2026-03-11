@@ -1,32 +1,36 @@
 :root {
-    --color-primery: #917458;
+    --color-primary: #917458;
+    --color-gold: #d4af37;
 }
 
 * {
-    margin: 0%;
-    padding: 0%;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    font-family: "poppins" , sans-serif;
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
 }
 
 .container {
-    width: 1170px;
+    width: 90%;
+    max-width: 1170px;
     margin: 0 auto;
 }
-
 
 /***************
 * HOME 
 ****************/
 
-
 .home {
     background-size: cover;
+    background-position: center;
     background-image: url(../images/bg-home.jpg);
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
+    padding-bottom: 50px;
 }
 
 .home .header {
@@ -41,161 +45,215 @@ body {
 .home .header .nav ul {
     display: flex;
     list-style: none;
+    align-items: center;
 }
 
 .home .header .nav ul li {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 150px;
-    margin: 0 10px;
+    text-align: center;
 }
 
 .home .header .nav ul li a {
     color: white;
     text-transform: uppercase;
     text-decoration: none;
-    font-weight: bold;
-    font-size: 12px;
-    padding: 20px;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 1px;
+    transition: 0.3s;
 }
 
 .home .header .nav ul li a:hover {
-    border-bottom: 1px solid var(--color-primery);
-    color: var(--color-primery);
+    color: var(--color-primary);
 }
 
 .home .header .nav ul li .logo {
-    margin: 0 30px;
+    width: 150px;
+    margin: 0 20px;
 }
 
-
-
-
 /******************
-* .HOME .BANNER 
+* BANNER 
 ********************/
 
 .home .banner {
     color: white;
     text-align: center;
-    padding-left: 150px;
-}
-
-.home .banner span {
-    display: block;
+    margin-top: 50px;
 }
 
 .home .banner .slogan1 {
-    color: var(--color-primery);
+    color: var(--color-primary);
     text-transform: uppercase;
-    letter-spacing: 4px;
-    font-size: 14px;
+    letter-spacing: 6px;
+    font-size: 16px;
+    display: block;
+    margin-bottom: 10px;
 }
 
 .home .banner h1 {
-    font-size: 100px;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(50px, 8vw, 100px); /* Ajusta fonte conforme a tela */
+    margin-bottom: 10px;
 }
 
 .home .banner .slogan2 {
-    margin-bottom: 15px;
+    display: block;
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: 2px;
 }
 
 /************
-* ABOUT 
+* ABOUT / EXPERIENCE
 ************/
 
 .about {
-    background-color: var(--color-primery);
+    background-color: var(--color-primary);
+    padding: 80px 0;
 }
 
 .about .container {
     display: flex;
+    align-items: flex-start;
 }
 
+/* Coluna dos Horários */
 .about .timing {
     position: relative;
-    top: -50px;
-    width: 33%;
-    padding: 20px;
+    top: -120px;
+    width: 35%;
     background-image: url(../images/brush-big.jpg);
+    background-size: cover;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
 }
 
 .about .timing .overlay {
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba#f1cecedd;;
     text-align: center;
-    padding: 40px 20px;
-}
-
-.about .timing .icon-cut {
-    width: 50px;
+    padding: 50px 30px;
 }
 
 .about .timing h3 {
-    color: var(--color-primery);
+    color: var(--color-gold);
     text-transform: uppercase;
-    border-bottom: 1px solid var(--color-primery);
-    width: fit-content;
-    margin: 0 auto 30px auto;
-    font-size: 30px;
+    letter-spacing: 3px;
+    font-size: 24px;
+    margin: 15px 0 30px;
+    border-bottom: 1px solid var(--color-gold);
+    display: inline-block;
+    padding-bottom: 5px;
 }
 
-.about .timing .text {
-    margin: 10px 0;
-}
-
-.about .timing .text::after {
-    content: '•';
-    color: white;
-    display: block;
-    font-size: 25px;
-    margin-top: 10px;
-}
-
-.about .timing .text:last-of-type::after {
-    content: '|';
-}
-
-.about .timing .text h4 {
-    color: grey;
-    font-weight: 400;
-    font-size: 15px;
-}
-
-.about .timing span {
-    color: white;
-    font-size: 15px;
-    display: block;
-}
-
+/* Coluna da História */
 .about .experience {
-    width: 66%;
+    width: 60%;
     color: white;
-    margin-left: 7%;
-    margin-top: 100px;
+    margin-left: 5%;
+}
+
+.about .experience span {
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 14px;
+    color: var(--color-gold);
+    margin-bottom: 15px;
 }
 
 .about .experience h2 {
-    font-weight: 400;
-    font-size: 40px;
+    font-family: 'Playfair Display', serif;
+    font-size: 55px;
+    line-height: 1.1;
+    margin-bottom: 30px;
 }
 
-.about.experience h2::after {
-    display: block;
+.about .experience h2::after {
     content: '';
-    width: 100px;
+    display: block;
+    width: 80px;
     height: 3px;
-    background-color: #a38f78;
-    margin: 20px 0;
+    background-color: var(--color-gold);
+    margin-top: 20px;
 }
 
 .about .experience .text {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column; /* Melhor para preenchimento vertical */
 }
 
 .about .experience .text p {
-    margin-bottom: 20%;
-    font-weight: 100;
-    font-size: 17px;
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    font-weight: 300;
+    color: #f1f1f1;
+    text-align: justify;
+}
+
+.about .experience .text img {
+    width: 100%;
+    max-width: 400px;
+    margin-top: 20px;
+    opacity: 0.8;
+    align-self: flex-end; /* Posiciona imagem de forma chique */
+}
+
+/******************
+* RESPONSIVIDADE
+********************/
+
+@media (max-width: 992px) {
+    .about {
+        padding: 40px 0;
+    }
+
+    .about .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about .timing {
+        width: 100%;
+        top: 0;
+        margin-bottom: 50px;
+    }
+
+    .about .experience {
+        width: 100%;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .about .experience h2 {
+        font-size: 40px;
+    }
+
+    .about .experience h2::after {
+        margin: 20px auto;
+    }
+
+    .about .experience .text img {
+        align-self: center;
+    }
+
+    .home .header .nav ul li {
+        width: auto;
+        margin: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .home .header .nav ul li {
+        width: 45%;
+    }
+
+    .home .header .nav ul li:nth-child(4) {
+        width: 100%;
+        order: -1;
+    }
+
+    .home .banner h1 {
+        font-size: 45px;
+    }
 }
